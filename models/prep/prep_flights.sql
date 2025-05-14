@@ -11,7 +11,7 @@ flights_cleaned AS(
 			,arr_time* '1 minute'::INTERVAL AS arr_time
            	,TO_CHAR(sched_arr_time, 'fm0000')::TIME AS sched_arr_time
             ,arr_delay
-            ,arr_delay * '1 minute'::INTERVAL AS arr_delay_interval
+			,to_char(arr_time,'fm0000')::TIME AS arr_time
             ,airline
             ,tail_number
             ,flight_number
